@@ -40,16 +40,6 @@ namespace PuzzleGame
                 Console.WriteLine($"Стоимость пути: {solution.Count - 1}");
                 Console.WriteLine($"Количество шагов (временная сложность): {stepCount}");
                 Console.WriteLine($"Количество единиц памяти (ёмкостная сложность): {memoryComplexity}");
-
-                string shouldShowPath = ShowPath();
-
-                if (shouldShowPath == "y")
-                {
-                    foreach (var node in solution)
-                    {
-                        node.PrintConsole();
-                    }
-                }
             }
             else
             {
@@ -81,23 +71,6 @@ namespace PuzzleGame
             while (true)
             {
                 Console.Write("Включить пошаговый режим (y/n)?: ");
-                string key = Console.ReadLine();
-
-                if (key.ToLower() == "y"
-                    || key.ToLower() == "n")
-                {
-                    return key.ToLower();
-                }
-
-                Console.WriteLine("Неверный ввод. Попробуйте снова.");
-            }
-        }
-
-        private static string ShowPath()
-        {
-            while (true)
-            {
-                Console.Write("Показать путь (y/n)?: ");
                 string key = Console.ReadLine();
 
                 if (key.ToLower() == "y"

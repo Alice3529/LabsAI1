@@ -5,3 +5,10 @@ C:\Users\Alisa\source\repos\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csproj
 C:\Users\Alisa\source\repos\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.exe
 C:\Users\Alisa\source\repos\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.pdb
 C:\Users\Alisa\source\repos\ConsoleApp4\ConsoleApp4\obj\Debug\ConsoleApp4.csproj.AssemblyReference.cache
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\bin\Debug\ConsoleApp4.exe.config
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\bin\Debug\ConsoleApp4.exe
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\bin\Debug\ConsoleApp4.pdb
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\obj\Debug\ConsoleApp4.csproj.AssemblyReference.cache
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\obj\Debug\ConsoleApp4.csproj.CoreCompileInputs.cache
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\obj\Debug\ConsoleApp4.exe
+C:\Users\Alisa\source\repos\LabsAI1\LabsAI1\obj\Debug\ConsoleApp4.pdb

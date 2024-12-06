@@ -15,7 +15,7 @@ namespace PuzzleGame
         public List<Node> BFS(Node root, out int stepCount, out int memoryComplexity)
         {
             stepCount = 0;
-            memoryComplexity = 0;
+            memoryComplexity = 1;
             List<Node> pathToSolution = new List<Node>();
             Queue<Node> queue = new Queue<Node>();
             HashSet<string> visitedStates = new HashSet<string>();
@@ -42,6 +42,8 @@ namespace PuzzleGame
 
                 currentNode.Expand();
 
+                memoryComplexity += currentNode.children.Count;
+
                 foreach (Node child in currentNode.children)
                 {
                     string childState = string.Join(",", child.state);
@@ -58,9 +60,8 @@ namespace PuzzleGame
                     }
 
                 }
-                memoryComplexity = Math.Max(memoryComplexity, queue.Count);
-                this.LogInfo(newNodes, repeatNodes, queue, stepCount, currentNode);
 
+                this.LogInfo(newNodes, repeatNodes, queue, stepCount, currentNode);
             }
 
             return pathToSolution;
@@ -70,7 +71,7 @@ namespace PuzzleGame
         public List<Node> DFS(Node root, out int stepCount, out int memoryComplexity)
         {
             stepCount = 0;
-            memoryComplexity = 0;
+            memoryComplexity = 1;
             Stack<Node> stack = new Stack<Node>();
             List<Node> repeatNodes = new List<Node>();
             List<Node> newNodes = new List<Node>();
@@ -79,6 +80,8 @@ namespace PuzzleGame
 
             while (stack.Count > 0)
             {
+                repeatNodes.Clear();
+                newNodes.Clear();
                 Node currentNode = stack.Pop();
                 stepCount++;
 
@@ -91,7 +94,7 @@ namespace PuzzleGame
 
                 visited.Add(string.Join(",", currentNode.state));
                 currentNode.Expand();
-
+                memoryComplexity += currentNode.children.Count;
                 foreach (var child in currentNode.children)
                 {
                     string childState = string.Join(",", child.state);
@@ -106,14 +109,13 @@ namespace PuzzleGame
                     }
                 }
 
-                memoryComplexity = Math.Max(memoryComplexity, stack.Count);
                 this.LogInfo(newNodes, repeatNodes, stack, stepCount, currentNode);
             }
 
             return new List<Node>();
         }
 
-        
+
         private void LogInfo(List<Node> newNodes, List<Node> repeatNodes, IEnumerable<Node> border, int stepCount, Node currentNode)
         {
             if (!this.isStepByStepMode) { return; }
@@ -173,4 +175,3 @@ namespace PuzzleGame
         }
     }
 }
-
